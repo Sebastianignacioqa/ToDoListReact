@@ -1,8 +1,24 @@
 import React from 'react';
-import App from './App';
 
-const Checkbox = () => {
-return (<div> CHECKBOX</div>)
-}
+
+const Checkbox = (props) => {
+    const {
+        onChange,
+        data: {
+            id, descripcion,done
+        }} = props;
+
+return (
+<label className="nuevoitem">
+<input
+  className="state"
+  name={id}
+  type="checkbox"
+  defaultChecked={done}
+  onChange={onChange}
+/>
+<div className="text">{descripcion}</div>
+</label>)
+};
 
 export default Checkbox

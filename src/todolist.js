@@ -1,13 +1,18 @@
-import React from "react"
-import App from "./App"
+import React, { useState } from "react"
+
 import Form from "./form"
 import Tasks from "./tasks"
 
 const Todolist = () => {
+    
+    const [lista, setLista] = useState([]);
+    const agregarItem = item => {
+        setLista([...lista, item]);
+    };
+
     return (<div className="container">
-    CONTAINER
-    <Form />
-    <Tasks />
+    <Form agregarItem={agregarItem} />
+    <Tasks lista={lista} setLista={setLista} />
     </div>)
 
 }
