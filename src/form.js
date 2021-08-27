@@ -7,7 +7,7 @@ const Form = (props) => {
     const { agregarItem } = props;
     const handleSubmit = (evento) => {
         evento.preventDefault();
-        
+
         agregarItem({
             done: false,
             id:(+new Date()).toString(),
@@ -34,7 +34,7 @@ const Form = (props) => {
                     value={descripcion} //Aca seteamos el value que es igual al estado descripcion
                     onChange={seteoDescripcion}> 
                 </input> 
-                <button className="btn btn-secondary" disabled={descripcion ? "" : "disabled"}> 
+                <button className="btn btn-success m-3" disabled={descripcion ? "" : "disabled"}> 
                     AGREGAR
                 </button>
             </div> 

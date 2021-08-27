@@ -25,11 +25,11 @@ const Tasks = (props) => {
     const mapeo = lista.map(item => (<Checkbox key={item.id} data={item} onChange={onChangeStatus} />));
     
     return (<div className= "listadoTodo">
-        {lista.length ? mapeo : "No hay tareas"}
+        {lista.length ? mapeo : <h5>No hay tareas</h5>}
         {lista.length ? (
             <p>
-                <button className="boton2" onClick={onClickRemoveItem}>
-                    Eliminar todo lo realizado
+                <button className="btn btn-danger px-2" onClick={onClickRemoveItem}>
+                    Eliminar seleccion
                 </button>
             </p>
         ) : null}
