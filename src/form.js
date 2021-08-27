@@ -4,32 +4,42 @@ import React, { useState } from 'react';
 
 const Form = (props) => {
     const [descripcion, setDescripcion] = useState ("");
-    const { agregarItem } = props
-    const handleSubmit = e => {
-        e.preventDefault();
+    const { agregarItem } = props;
+    const handleSubmit = (evento) => {
+        evento.preventDefault();
+        
         agregarItem({
             done: false,
             id:(+new Date()).toString(),
-            descripcion
+            descripcion,
+            
         });
         console.log(descripcion)
+        
+        
         setDescripcion("");
     }
+
+    const seteoDescripcion = (evento) => {
+        setDescripcion(evento.target.value);
+    }
+    
+
     return(
         <form onSubmit={handleSubmit}>
             <div className="todolist">
             <div className= "formulario">
                 <input type="text" 
                     className="texto" 
-                    value={descripcion} 
-                    onChange={e => setDescripcion(e.target.value)}>
-                </input>
-                <button className="boton" disabled={descripcion ? "" : "disabled"}>
+                    value={descripcion} //Aca seteamos el value que es igual al estado descripcion
+                    onChange={seteoDescripcion}> 
+                </input> 
+                <button className="btn btn-secondary" disabled={descripcion ? "" : "disabled"}> 
                     AGREGAR
                 </button>
+            </div> 
             </div>
-            </div>
-        </form> 
+        </form> //Aca seteamos que el evento OnChange le otorgue el valor de lo escrito
             )
 }
 
