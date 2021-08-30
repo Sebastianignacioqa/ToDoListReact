@@ -9,7 +9,7 @@ const Checkbox = (props) => {
         }} = props;
 
 return (
-<label className="nuevoitem">
+<label className="todo">
 <input
   className="state"
   name={id}

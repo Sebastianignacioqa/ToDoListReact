@@ -28,7 +28,7 @@ const Tasks = (props) => {
         {lista.length ? mapeo : <h5>No hay tareas</h5>}
         {lista.length ? (
             <p>
-                <button className="btn btn-danger px-2" onClick={onClickRemoveItem}>
+                <button className="btn btn-danger p-2 m-3" onClick={onClickRemoveItem}>
                     Eliminar seleccion
                 </button>
             </p>
